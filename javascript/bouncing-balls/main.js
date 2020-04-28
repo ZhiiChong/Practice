@@ -49,18 +49,22 @@ class Ball extends Shape {
 
   update() {
     if ((this.x + this.size) >= width) {
+      this.x = width - this.size;
       this.velX = -(this.velX);
     }
   
     if ((this.x - this.size) <= 0) {
+      this.x = this.size;
       this.velX = -(this.velX);
     }
   
     if ((this.y + this.size) >= height) {
+      this.y = height - this.size;
       this.velY = -(this.velY);
     }
   
     if ((this.y - this.size) <= 0) {
+      this.y = this.size;
       this.velY = -(this.velY);
     }
   
@@ -70,7 +74,7 @@ class Ball extends Shape {
 
   collisionDetect() {
     for (var j = 0; j < balls.length; j++) {
-      if (!(this === balls[j])) {
+      if (!(this === balls[j]) && balls[j].exists) {
         var dx = this.x - balls[j].x;
         var dy = this.y - balls[j].y;
         var distance = Math.sqrt(dx * dx + dy * dy);
@@ -102,19 +106,19 @@ class EvilCircle extends Shape {
   }
 
   checkBounds() {
-    if ((this.x + this.size) >= width) {
+    if ((this.x + this.size) > width) {
       this.x = width - this.size;
     }
   
-    if ((this.x - this.size) <= 0) {
+    if ((this.x - this.size) < 0) {
       this.x = this.size;
     }
   
-    if ((this.y + this.size) >= height) {
-      this.y = this.height - this.size;
+    if ((this.y + this.size) > height) {
+      this.y = height - this.size;
     }
   
-    if ((this.y - this.size) <= 0) {
+    if ((this.y - this.size) < 0) {
       this.y = this.size;
     }
   }
@@ -151,7 +155,7 @@ class EvilCircle extends Shape {
 
 let balls = [];
 
-let evilBall = new EvilCircle(random(0, width), random(0,height), true);
+let evilBall = new EvilCircle(width/2, height/2, true);
 evilBall.setControls();
 
 function loop() {
