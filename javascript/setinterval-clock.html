@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple setInterval clock</title>
+    <style>
+      p {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="clock"></p>
+    <button class="start">start</button>
+    <button class="stop">stop</button>
+    <button class="reset">reset</button>
+    <script>
+      let secondCount = 0;
+      let stopWatch;
+
+      function displayTime() {
+        let hours = Math.floor(secondCount / 3600);
+        let mins = Math.floor((secondCount % 3600) / 60);
+        let secs = Math.floor(secondCount % 60);
+
+        hours = hours < 10 ? '0' + hours : hours;
+        mins = mins < 10 ? '0' + mins : mins;
+        secs = secs < 10 ? '0' + secs : secs;
+
+        let para = document.querySelector('.clock');
+        para.textContent = hours + ':' + mins + ':' + secs;
+
+        secondCount ++;
+      }
+
+      const startBtn = document.querySelector('.start');
+      const stopBtn = document.querySelector('.stop');
+      const resetBtn = document.querySelector('.reset');
+
+      startBtn.addEventListener('click', () => {
+        stopWatch = setInterval(displayTime, 1000);
+        startBtn.disabled = true;
+      });
+
+      stopBtn.addEventListener('click', () => {
+        clearInterval(stopWatch);
+        startBtn.disabled = false;
+      });
+
+      resetBtn.addEventListener('click', () => {
+        clearInterval(stopWatch);
+        startBtn.disabled = false;
+        secondCount = 0;
+        displayTime();
+      });
+
+      displayTime();
+    </script>
+  </body>
+</html>
