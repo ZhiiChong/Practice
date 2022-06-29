@@ -5,7 +5,7 @@ var fn_index = async (ctx, next) => {
     <form action="/signin" method="post">
       <p>Name: <input name="name" value="koa"><p>
       <p>Password: <input name="password" type="password"></p>
-      <p><input type="submit" balue="Submit"></p>
+      <p><input type="submit" value="Submit"></p>
     </form>`;
 }
 
