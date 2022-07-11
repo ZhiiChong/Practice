@@ -17,7 +17,7 @@ var app5 = new Vue({
         message: 'Bye Vue.js!'
     },
     methods: {
-        reverseMessage: function() {
+        reverseMessage: function () {
             this.message = this.message.split('').reverse().join('')
         }
     }
@@ -37,5 +37,24 @@ Vue.component('todo-item', {
 
 var app7 = new Vue({
     el: '#app-7'
-    
+
+})
+
+/* 
+ *  v-指令名称：参数 = "指令的值"
+ */
+
+let newapp = new Vue({
+    el: '#newapp',
+    data: {
+        myId: 'test',
+        text: '你好',
+        style1: {
+            width: '100px',
+            height: '100px',
+            background: 'gray'
+        },
+        isActive: true,
+        isChecked: false
+    }
 })

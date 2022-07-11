@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+
+      <input type="text" v-focus="isFocus" /><button v-on:click="fn">按钮</button>
+
+    </div>
+    
+    
+    <script>
+
+      // 官方实例
+      Vue.directive('focus', {
+        bind() {
+
+        },
+        inserted(el) {
+          console.log(el);
+          el.focus();
+        },
+        conponentUpdated(el) {
+          console.log(el);
+          conssole.log(el.$data.isFocus);
+          el.focus();
+        }
+      });
+
+
+      let app = new Vue({
+        el: '#app',
+        data: {
+          isFocus: 0
+        },
+        methods: {
+          fn: function() {
+            this.$data.isFocus += 1;
+            console.log('fn');
+          }
+        }
+      })
+
+
+    </script>
+  </body>
+</html>

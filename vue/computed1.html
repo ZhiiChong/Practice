@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      .active {
+        background: yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+
+      <div>
+        <button :class="{active: gender === ''}" @click="getUsers('')">全部</button>
+        <button :class="{active: gender === '男'}" @click="getUsers('男')">大老爷们</button>
+        <button :class="{active: gender === '女'}" @click="getUsers('女')">小姐姐</button>
+      </div>
+
+      <hr />
+
+      <ul>
+        <!-- <li v-for="user in users">
+          {{user.username}}
+        </li> -->
+        <li v-for="user in showUsers">
+          {{user.username}}
+        </li>
+      </ul>
+
+    </div>
+    
+    
+    <script>
+
+      let users = [
+            {id: 1, username: 'baogege', gender: '男'},
+            {id: 2, username: 'mt', gender: '男'},
+            {id: 3, username: 'haigege', gender: '男'},
+            {id: 4, username: 'zMouse', gender: '男'},
+            {id: 5, username: 'reci', gender: '女'},
+            {id: 6, username: 'lisi', gender: '女'}
+      ]
+
+      let app = new Vue({
+        el: '#app',
+        data: {
+          users,
+          showUsers: users,
+          gender: ''
+        },
+        methods: {
+          getUsers: function(gender) {
+            this.gender = gender;
+            if (gender === '') {
+              this.showUsers =  this.users;
+              return;
+            } else {
+              this.showUsers = this.users.filter( user => user.gender === gender );
+              return;
+            }
+          }
+        }
+      });
+
+
+    </script>
+  </body>
+</html>

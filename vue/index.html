@@ -34,6 +34,16 @@
         <todo-item></todo-item>
       </ol>
     </div>
+
+    <div id="newapp">
+      <div v-bind:id="myId">
+        <p>{{text}}</p>
+      </div>
+      <div :style="style1" :class="{'box1' : isActive, 'box2' : isChecked}">
+
+      </div>
+    </div>
+    
     <script src="scripts/index.js"></script>
   </body>
 </html>
