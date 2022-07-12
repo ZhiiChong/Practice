@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      .active {
+        background: yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      
+      <k-div></k-div>
+
+    </div>
+    
+    
+    <script>
+
+      /**
+       * Vue
+       *  根组件（应用的最顶层组件，一般情况下一个应用只有一个顶层组件，只使用一个）
+       *  可复用组件
+       *    在应用中更具有复用性的组件（轮播图、幻灯片...）
+       */
+
+      // 尽量避免单词命名，以防和原生标签冲突
+      Vue.component('k-div', {
+        template: // 模板有且只能有一个根节点
+        `
+          <div>开课吧</div>
+        `
+      }); 
+
+      let app = new Vue({
+        el: '#app',
+        data: {
+          
+        }
+      });
+
+
+    </script>
+  </body>
+</html>

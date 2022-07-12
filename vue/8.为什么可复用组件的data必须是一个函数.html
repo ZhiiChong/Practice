@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      .active {
+        background: yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      
+      <k-div></k-div>
+      <k-p></k-p>
+
+    </div>
+    <hr />
+    <div id="app2">
+
+      <k-div></k-div>
+      <!-- <k-p></k-p> -->
+
+    </div>
+    
+    
+    <script>
+
+      /**
+       * 通过 Vue.component 注册的：全局组件
+       * 
+       */
+
+      // 尽量避免单词命名，以防和原生标签冲突
+      Vue.component('k-div', {
+        template: // 模板有且只能有一个根节点
+        `
+          <div>开课吧</div>
+        `
+      }); 
+
+      let app = new Vue({
+        el: '#app',
+        data: {
+          
+        },
+        components: {
+          'k-p': {
+            template: `<p>这是 k-p <k-p-p></k-p-p></p>`,
+            components: {
+              'k-p-p': {
+                template: `<p>这是 k-p-p </p>`
+                // 类似于变量作用域
+              }
+              
+            }
+          }
+        }
+      });
+
+      let app2 = new Vue({
+        el: '#app2',
+        data: {
+          
+        }
+      });
+
+
+    </script>
+  </body>
+</html>
