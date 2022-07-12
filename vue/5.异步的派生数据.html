@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      .active {
+        background: yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" v-model.lazy="keyWord" />
+      <hr />
+      <ul>
+        <li v-for="user of showUsers">
+          {{user.username}}
+        </li>
+      </ul>
+      
+
+    </div>
+    
+    
+    <script>
+
+
+
+      let app = new Vue({
+        el: '#app',
+        data: {
+          keyWord: '',
+          users: [
+            {id: 1, username: 'baogege', gender: '男', checked: false},
+            {id: 2, username: 'mt', gender: '男', checked: false},
+            {id: 3, username: 'haigege', gender: '男', checked: false},
+            {id: 4, username: 'zMouse', gender: '男', checked: false},
+            {id: 5, username: 'reci', gender: '女', checked: false},
+            {id: 6, username: 'lisi', gender: '女', checked: false}
+          ],
+          showUsers: []
+        },
+        
+        // computed: {
+        //   showUsers() {
+        //     if (this.keyWord === '') {
+        //       return [];
+        //     }
+        //     // 如果说数据的来源不是 data 中的，而是通过异步的方式获取到的，比如 ajax 获取的
+        //     // 需要使用异步获取/promise，但 computed 不支持
+        //     return this.users.filter( user => user.username.includes(this.keyWord))
+        //   }
+        // },
+        watch: {
+          // computed 是依赖数据变化
+          // watch 主动处理数据变化
+          keyWord() {
+            // this.showUsers = this.users.filter( user => user.username.includes(this.keyWord));
+            setTimeout(() => {
+              this.showUsers = this.users.filter( user => user.username.includes(this.keyWord));
+            }, 1000);
+          }
+        }
+      });
+
+
+    </script>
+  </body>
+</html>

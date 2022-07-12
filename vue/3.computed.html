@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      .active {
+        background: yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+
+      <div>
+        <button :class="{active: gender === ''}" @click="gender = ''">全部</button>
+        <button :class="{active: gender === '男'}" @click="gender = '男'">大老爷们</button>
+        <button :class="{active: gender === '女'}" @click="gender = '女'">小姐姐</button>
+      </div>
+
+      <hr />
+
+      <ul>
+        <!-- <li v-for="user in users">
+          {{user.username}}
+        </li> -->
+        <li v-for="user in showUsers">
+          <input type="checkbox" v-model="user.checked"/>{{user.username}}
+        </li>
+      </ul>
+
+      <hr />
+
+      <input type="checkbox" v-model:checked="checkedAll"/>全选
+
+    </div>
+    
+    
+    <script>
+
+      let users = [
+            {id: 1, username: 'baogege', gender: '男', checked: false},
+            {id: 2, username: 'mt', gender: '男', checked: false},
+            {id: 3, username: 'haigege', gender: '男', checked: false},
+            {id: 4, username: 'zMouse', gender: '男', checked: false},
+            {id: 5, username: 'reci', gender: '女', checked: false},
+            {id: 6, username: 'lisi', gender: '女', checked: false}
+      ]
+
+      let app = new Vue({
+        el: '#app',
+        data: {
+          users,
+          gender: ''
+          // checkedAll 的来源由 users 中每一个数据的 checked 值来决定，即派生出来的，用作 computed 属性更合适
+        },
+        /**
+         * 计算得到的数据
+         *  - computed 里面存放的是属性，类似 data，而不是 methods，所以称为计算属性
+         *  - 里面的属性可以像 data 里面存放的数据一样去使用
+         *  - 这些属性的值是通过运算得到的
+         *  - 它的结构类似 (defineProperty), getter, setter
+         *  - 计算属性的值同时还会根据他所依赖的数据变化而变化
+         * */
+        computed: {
+          showUsers: {
+            // get 方法定义该属性如何得到值
+            get() {
+              if (this.gender === '') {
+                return this.users;
+              } else {
+                return this.users.filter( user => user.gender === this.gender)
+              }
+            }
+            // set 方法定义该属性值变化时如何影响 data
+          },
+          checkedAll: {
+            get() {
+              return this.users.every(user => user.checked);
+            },
+            set(newVal) {
+              // console.log(newVal);
+              this.users = this.users.map(user => {
+                return {...user, ...{checked: newVal}};
+              });
+            }
+          }
+        },
+        methods: {
+          getUsers: function(gender) {
+            
+          }
+        }
+      });
+
+
+    </script>
+  </body>
+</html>

@@ -13,26 +13,29 @@
   <body>
     <div id="app">
 
-      <div>
+      <!-- <div>
         <button :class="{active: gender === ''}" @click="gender = ''">全部</button>
         <button :class="{active: gender === '男'}" @click="gender = '男'">大老爷们</button>
         <button :class="{active: gender === '女'}" @click="gender = '女'">小姐姐</button>
-      </div>
+      </div> -->
 
       <hr />
 
-      <ul>
-        <!-- <li v-for="user in users">
+      <!-- <ul>
+        <li v-for="user in users">
           {{user.username}}
-        </li> -->
-        <li v-for="user in showUsers">
-          <input type="checkbox" />{{user.username}}
         </li>
-      </ul>
+        <li v-for="user in showUsers">
+          <input type="checkbox" v-model="user.checked"/>{{user.username}}
+        </li>
+      </ul> -->
+      <!-- <p v-if="showDate">{{now}}</p> -->
+      <p>{{a}}</p>
 
       <hr />
 
-      <input type="checkbox" />全选
+      <!-- <input type="checkbox" v-model:checked="checkedAll"/>全选 -->
+      <button @click="showDate = !showDate">{{showDate}}</button>
 
     </div>
     
@@ -52,7 +55,9 @@
         el: '#app',
         data: {
           users,
-          gender: ''
+          gender: '',
+          showDate: true
+          // checkedAll 的来源由 users 中每一个数据的 checked 值来决定，即派生出来的，用作 computed 属性更合适
         },
         /**
          * 计算得到的数据
@@ -71,16 +76,40 @@
               } else {
                 return this.users.filter( user => user.gender === this.gender)
               }
-            },
+            }
             // set 方法定义该属性值变化时如何影响 data
-            set() {
-
+          },
+          checkedAll: {
+            get() {
+              return this.users.every(user => user.checked);
+            },
+            set(newVal) {
+              // console.log(newVal);
+              this.users = this.users.map(user => {
+                return {...user, ...{checked: newVal}};
+              });
+            }
+          },
+          now: {
+            get() {
+              return Date.now();
+            }
+          },
+          // 简写：直接使用函数表示 get 在这里 a 不是函数，而是计算属性
+          a() {
+            if (this.showDate) {
+              return "中文";
+            } else {
+              return "english";
             }
           }
         },
         methods: {
           getUsers: function(gender) {
             
+          },
+          getNow() {
+            return Date.now();
           }
         }
       });
