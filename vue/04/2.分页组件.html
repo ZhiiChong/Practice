@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      a {
+        padding: 5px 12px;
+        border: 1px solid rgb(110, 82, 109);
+        text-decoration: none;
+      }
+      a.active {
+        background: rgb(110, 82, 109);
+        color: white
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id="app">
+      
+      <ul>
+        <li v-for="user in users">
+          {{user.name}}
+        </li>
+      </ul>
+
+    <div id="pagination">
+      <a href="">上一页</a>
+      <a href="">1</a>
+      <a href="">2</a>
+      <a href="" class="active">3</a>
+      <a href="">4</a>
+      <a href="">5</a>
+      <a href="">6</a>
+      <a href="">下一页</a>
+    </div>
+    
+    
+    <script>
+
+      new Vue({
+        el: '#app',
+        data: {
+          users: [
+            {id:1 , name: '莫涛'},
+            {id:2 , name: '大海'},
+            {id:3 , name: '紫薯'},
+            {id:4 , name: '宝哥'},
+            {id:5 , name: '小姐姐'},
+            {id:6 , name: '斑斑'},
+            {id:7 , name: 'lucas'}
+          ]
+        }
+      })
+
+    </script>
+  </body>
+</html>

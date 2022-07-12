@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="styles/index.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      .pagination {
+        margin: 20px 0;
+      }
+      .pagination a {
+        padding: 5px 12px;
+        margin: 1px;
+        border: 1px solid rgb(110, 82, 109);
+        text-decoration: none;
+      }
+      .pagination a.active {
+        background: rgb(110, 82, 109);
+        color: white
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- 
+
+      父组件
+
+      子组件
+
+        <div>   <-- 父组件
+          <span></span>   <-- 子组件
+        </div>
+
+     -->
+
+
+    <div id="app">
+      
+      <ul>
+        <li v-for="user in users">
+          {{user.name}}
+        </li>
+      </ul>
+
+      <!-- 如果属性没有使用 v-bind，那么传入的值就只有字符串 -->
+      <k-pagination :pages="10" :page="3"></k-pagination>
+
+      <k-pagination :pages="5" :page="4"></k-pagination>
+
+    </div>
+    
+    
+    <script>
+
+      /**
+       *  组件内部的一些内容会动态变化 
+       */
+
+      Vue.component('k-pagination', {
+        props: ["pages", "page"], // 组件内部可以通过 this 直接访问 props 中的数据
+        template: `
+          <div class="pagination">
+            <a href="">上一页</a>
+            <a href="" v-for="p of pages" :class="{'active' : p === page}">{{p}}</a>
+            <a href="">下一页</a>
+          </div>
+        `
+      });
+
+      new Vue({
+        el: '#app',
+        data: {
+          users: [
+            {id:1 , name: '莫涛'},
+            {id:2 , name: '大海'},
+            {id:3 , name: '紫薯'},
+            {id:4 , name: '宝哥'},
+            {id:5 , name: '小姐姐'},
+            {id:6 , name: '斑斑'},
+            {id:7 , name: 'lucas'}
+          ]
+        }
+      })
+
+    </script>
+  </body>
+</html>
