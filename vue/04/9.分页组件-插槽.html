@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="styles/index.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      .pagination {
+        margin: 20px 0;
+      }
+      .pagination a {
+        padding: 5px 12px;
+        margin: 1px;
+        border: 1px solid rgb(110, 82, 109);
+        text-decoration: none;
+      }
+      .pagination a.active {
+        background: rgb(110, 82, 109);
+        color: white
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- 
+
+      父组件
+
+      子组件
+
+        <div>   <-- 父组件
+          <span></span>   <-- 子组件
+        </div>
+
+     -->
+
+
+    <div id="app">
+      
+      <ul>
+        <li v-for="user in showUsers">
+          {{user.name}}
+        </li>
+      </ul>
+
+      <!-- 如果属性没有使用 v-bind，那么传入的值就只有字符串 -->
+      <k-pagination :total="users.length" :per-page="perPage" :page.sync="uPage" >
+        <span style="color: red; font-size: x-small;" slot="header">开课吧友情赞助</span>
+        <template v-slot:footer="props" >
+          <span>共{{props.pages}}页，
+            当前第<input type="text" style="width: 20px; display: inline-block;" :value="props.page" @keyup.13="jump"/>页
+          </span>
+        </template>
+      </k-pagination>
+
+      <!-- <k-pagination :pages="5" :page="4"></k-pagination> -->
+
+    </div>
+    
+    
+    <script>
+
+      /**
+       *  组件 -> 插槽
+       */
+
+      Vue.component('k-pagination', {
+        props: ["total", "perPage", "page"], // 组件内部可以通过 this 直接访问 props 中的数据
+        // model 选项就是用来设定 v-model 绑定的规则的
+        data() {
+          return {
+            pages: Math.ceil(this.total / this.perPage)
+          }
+        },
+        template: `
+          <div class="pagination">
+            <slot name="header"></slot>
+            <a href="" @click.prevent="prePage">上一页</a>
+            <a 
+              href="" 
+              v-for="p of pages" 
+              :class="{'active' : p === page}" 
+              @click.prevent="gotoPage(p)"
+            >
+              {{p}}
+            </a>
+            <a href="" @click.prevent="nextPage">下一页</a>
+            <slot name="footer" :pages="pages" :page="page"></slot>   <!--如果不用 slot 标签，组件内部的 html 会被 template 覆盖掉-->
+          </div>
+        `,
+        methods: {
+          gotoPage(p) {
+            this.$emit('update:page', p);
+            // console.log(p);
+            // console.log(this);
+            // this.$emit('change-page', p);
+          },
+          prePage() {
+            this.page - 1 > 0 ? this.$emit('update:page', this.page - 1) : this.$emit('change-page', this.page);
+          },
+          nextPage() {
+            this.page + 1 <= this.pages ? this.$emit('update:page', this.page + 1) : this.$emit('change-page', this.page);
+          }
+        }
+        
+      });
+
+      let app = new Vue({
+        el: '#app',
+        data: {
+          users: [
+            {id:1 , name: '莫涛'},
+            {id:2 , name: '大海'},
+            {id:3 , name: '紫薯'},
+            {id:4 , name: '宝哥'},
+            {id:5 , name: '小姐姐'},
+            {id:6 , name: '斑斑'},
+            {id:7 , name: 'lucas'}
+          ],
+          uPage: 1,   // 当前页和已有的数据没有太多关联，只会和用户的行为关联，所以它不算是派生的
+          perPage: 2  // 每页显示多少条
+          //uPages: 10  // 总的页数是根据已有的数据总条数，以及每页想显示的数据条数决定的，这个是派生的
+        },
+        computed: {
+          showUsers() {
+            let start = (this.uPage-1) * this.perPage;
+            let end = this.uPage * this.perPage;
+            return this.users.slice(start, end);
+          }
+        },
+        methods : {
+          changePage(page) {
+            console.log(`子级修改了Page,${page}`);
+            this.uPage = page;
+          },
+          jump(e) {
+            let newPage = Number(e.target.value);
+            let uPages = Math.ceil(this.users.length / this.perPage);
+            console.log(newPage >= 1 && newPage <= uPages);
+            newPage >= 1 && newPage <= uPages ? this.uPage = newPage : e.target.value = this.uPage;
+          }
+        }
+      })
+
+    </script>
+  </body>
+</html>
