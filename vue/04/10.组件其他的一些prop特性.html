@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="styles/index.css"> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    
+  </head>
+  <body>
+
+    <!-- 
+
+      父组件
+
+      子组件
+
+        <div>   <-- 父组件
+          <span></span>   <-- 子组件
+        </div>
+
+     -->
+
+
+    <div id="app">
+      
+      <!--一般情况下，未在 props 中的属性会覆盖模板中的属性。class 与 style 特殊，会合并处理-->
+      <k-child a="1" b="2" c="3" style="background: rgb(247, 204, 204); color:rgb(14, 14, 114);"></k-child>
+
+    </div>
+    
+    
+    <script>
+
+      new Vue({
+        el: '#app',
+        components: {
+          kChild: {
+            props: ["a", "b"],
+            template: `
+              <div c="1" style="color: green;">Child - a:{{a}} - b:{{b}}</div>
+              
+            `
+          }
+        }
+      })
+
+    </script>
+  </body>
+</html>
