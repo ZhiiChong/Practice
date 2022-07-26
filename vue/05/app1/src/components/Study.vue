@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <div>World - <button @click="fnWorld">按钮</button></div>
+    <div>Study - <button @click="fnStudy">按钮</button></div>
   </div>
 </template>
 
@@ -9,16 +9,30 @@
 import eventBus from '../eventBus'
 
 export default {
-  name: 'WorldCom',
+  name: 'StudyCom',
   methods: {
-    fnWorld() {
+    fnStudy() {
       // console.log('World', this.$attrs);
       // console.log(this.val);
       // console.log(eventBus);
-      eventBus.$emit('abc', 10000);
+      // eventBus.$on('abc', function () {
+      //   console.log('执行了');
+      // })
+      console.log(this.val);
     }
   },
-  inject: ['val']
+  created() {
+    eventBus.$on('abc', e => {
+      console.log('执行了', e);
+      this.val = e;
+    })
+  },
+  data() {
+    return {
+      val: 0
+    }
+  }
+  // inject: ['val']
 }
 </script>
 
