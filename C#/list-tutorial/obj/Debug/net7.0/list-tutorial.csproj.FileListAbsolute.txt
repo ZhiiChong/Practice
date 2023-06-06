@@ -1,0 +1,15 @@
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\bin\Debug\net7.0\list-tutorial.exe
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\bin\Debug\net7.0\list-tutorial.deps.json
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\bin\Debug\net7.0\list-tutorial.runtimeconfig.json
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\bin\Debug\net7.0\list-tutorial.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\bin\Debug\net7.0\list-tutorial.pdb
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\obj\Debug\net7.0\list-tutorial.csproj.AssemblyReference.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\obj\Debug\net7.0\list-tutorial.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\obj\Debug\net7.0\list-tutorial.AssemblyInfoInputs.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\obj\Debug\net7.0\list-tutorial.AssemblyInfo.cs
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\obj\Debug\net7.0\list-tutorial.csproj.CoreCompileInputs.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\obj\Debug\net7.0\list-tutorial.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\obj\Debug\net7.0\refint\list-tutorial.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\obj\Debug\net7.0\list-tutorial.pdb
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\obj\Debug\net7.0\list-tutorial.genruntimeconfig.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\list-tutorial\obj\Debug\net7.0\ref\list-tutorial.dll

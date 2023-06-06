@@ -1,0 +1,15 @@
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\bin\Debug\net7.0\classes.exe
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\bin\Debug\net7.0\classes.deps.json
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\bin\Debug\net7.0\classes.runtimeconfig.json
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\bin\Debug\net7.0\classes.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\bin\Debug\net7.0\classes.pdb
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\obj\Debug\net7.0\classes.csproj.AssemblyReference.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\obj\Debug\net7.0\classes.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\obj\Debug\net7.0\classes.AssemblyInfoInputs.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\obj\Debug\net7.0\classes.AssemblyInfo.cs
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\obj\Debug\net7.0\classes.csproj.CoreCompileInputs.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\obj\Debug\net7.0\classes.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\obj\Debug\net7.0\refint\classes.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\obj\Debug\net7.0\classes.pdb
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\obj\Debug\net7.0\classes.genruntimeconfig.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\classes\obj\Debug\net7.0\ref\classes.dll

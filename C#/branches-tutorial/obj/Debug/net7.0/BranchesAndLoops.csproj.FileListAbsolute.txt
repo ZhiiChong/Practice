@@ -1,0 +1,15 @@
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\bin\Debug\net7.0\BranchesAndLoops.exe
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\bin\Debug\net7.0\BranchesAndLoops.deps.json
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\bin\Debug\net7.0\BranchesAndLoops.runtimeconfig.json
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\bin\Debug\net7.0\BranchesAndLoops.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\bin\Debug\net7.0\BranchesAndLoops.pdb
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\obj\Debug\net7.0\BranchesAndLoops.csproj.AssemblyReference.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\obj\Debug\net7.0\BranchesAndLoops.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\obj\Debug\net7.0\BranchesAndLoops.AssemblyInfoInputs.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\obj\Debug\net7.0\BranchesAndLoops.AssemblyInfo.cs
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\obj\Debug\net7.0\BranchesAndLoops.csproj.CoreCompileInputs.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\obj\Debug\net7.0\BranchesAndLoops.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\obj\Debug\net7.0\refint\BranchesAndLoops.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\obj\Debug\net7.0\BranchesAndLoops.pdb
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\obj\Debug\net7.0\BranchesAndLoops.genruntimeconfig.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\branches-tutorial\obj\Debug\net7.0\ref\BranchesAndLoops.dll
