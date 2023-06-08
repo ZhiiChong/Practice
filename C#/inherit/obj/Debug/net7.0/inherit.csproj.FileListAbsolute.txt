@@ -1,0 +1,15 @@
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\bin\Debug\net7.0\inherit.exe
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\bin\Debug\net7.0\inherit.deps.json
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\bin\Debug\net7.0\inherit.runtimeconfig.json
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\bin\Debug\net7.0\inherit.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\bin\Debug\net7.0\inherit.pdb
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\obj\Debug\net7.0\inherit.csproj.AssemblyReference.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\obj\Debug\net7.0\inherit.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\obj\Debug\net7.0\inherit.AssemblyInfoInputs.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\obj\Debug\net7.0\inherit.AssemblyInfo.cs
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\obj\Debug\net7.0\inherit.csproj.CoreCompileInputs.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\obj\Debug\net7.0\inherit.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\obj\Debug\net7.0\refint\inherit.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\obj\Debug\net7.0\inherit.pdb
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\obj\Debug\net7.0\inherit.genruntimeconfig.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\inherit\obj\Debug\net7.0\ref\inherit.dll
