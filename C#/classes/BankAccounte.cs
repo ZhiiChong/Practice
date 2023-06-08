@@ -3,6 +3,7 @@ namespace Classes;
 public class BankAccount
 {
     private static int accountNumberSeed = 1234567890;
+    private readonly decimal _minimumBalance;
     private List<Transaction> allTransactions = new List<Transaction>();
     // 定义属性
     public string Number { get; }
@@ -22,14 +23,27 @@ public class BankAccount
     }
 
     // 构造函数
-    public BankAccount(string name, decimal initialBalance)
+    // public BankAccount(string name, decimal initialBalance)
+    // {
+    //     this.Owner = name;
+    //     // this.Balance = initialBalance;
+    //     this.Number = accountNumberSeed.ToString();
+    //     accountNumberSeed++;
+    //     // 修改为添加初始交易，非直接更新余额
+    //     MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
+    // }
+    public BankAccount(string name, decimal initialBalance) : this(name, initialBalance, 0) { }
+
+    public BankAccount(string name, decimal initialBalance, decimal minimumBalance)
     {
-        this.Owner = name;
-        // this.Balance = initialBalance;
-        this.Number = accountNumberSeed.ToString();
+        Number = accountNumberSeed.ToString();
         accountNumberSeed++;
-        // 修改为添加初始交易，非直接更新余额
-        MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
+
+        Owner = name;
+        _minimumBalance = minimumBalance;
+
+        if (initialBalance > 0)
+            MakeDeposit(initialBalance, DateTime.Now, "Initial balance");
     }
     
     // 定义方法
@@ -42,18 +56,47 @@ public class BankAccount
         var deposit = new Transaction(amount, date, note);
         allTransactions.Add(deposit);
     }
+    // public void MakeWithdrawal(decimal amount, DateTime date, string note)
+    // {
+    //     if (amount <= 0)
+    //     {
+    //         throw new ArgumentOutOfRangeException(nameof(amount), "Amount of deposit must be positive");
+    //     }
+    //     if (Balance - amount < _minimumBalance)
+    //     {
+    //         throw new InvalidOperationException("Not sufficient funds for this withdrawal");
+    //     }
+    //     var withdrawal = new Transaction(-amount, date, note);
+    //     allTransactions.Add(withdrawal);
+    // }
+    // 重构取款方法
     public void MakeWithdrawal(decimal amount, DateTime date, string note)
     {
-        if (amount <= 0)
+         if (amount <= 0)
         {
             throw new ArgumentOutOfRangeException(nameof(amount), "Amount of deposit must be positive");
         }
-        if (Balance - amount < 0)
+        Transaction? overdraftTransaction = CheckWithdrawalLimit(Balance - amount < _minimumBalance);
+        Transaction? withdrawal = new(-amount, date, note);
+        allTransactions.Add(withdrawal);
+        if (overdraftTransaction != null)
+        {
+            allTransactions.Add(overdraftTransaction);
+            // Console.WriteLine($"MinimumBalance is {_minimumBalance}");
+        }
+            
+    }
+
+    protected virtual Transaction? CheckWithdrawalLimit(bool isOverDrawn)
+    {
+        if (isOverDrawn)
         {
             throw new InvalidOperationException("Not sufficient funds for this withdrawal");
         }
-        var withdrawal = new Transaction(-amount, date, note);
-        allTransactions.Add(withdrawal);
+        else
+        {
+            return default;
+        }
     }
 
     public string GetAccountHistory()
@@ -69,6 +112,11 @@ public class BankAccount
         }
 
         return report.ToString();
+    }
+
+    public virtual void PerformMonthEndTransactions()
+    {
+
     }
 }
 
