@@ -1,0 +1,15 @@
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\obj\Debug\net7.0\pattern-matching.csproj.AssemblyReference.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\obj\Debug\net7.0\pattern-matching.GeneratedMSBuildEditorConfig.editorconfig
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\obj\Debug\net7.0\pattern-matching.AssemblyInfoInputs.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\obj\Debug\net7.0\pattern-matching.AssemblyInfo.cs
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\obj\Debug\net7.0\pattern-matching.csproj.CoreCompileInputs.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\bin\Debug\net7.0\pattern-matching.exe
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\bin\Debug\net7.0\pattern-matching.deps.json
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\bin\Debug\net7.0\pattern-matching.runtimeconfig.json
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\bin\Debug\net7.0\pattern-matching.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\bin\Debug\net7.0\pattern-matching.pdb
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\obj\Debug\net7.0\pattern-matching.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\obj\Debug\net7.0\refint\pattern-matching.dll
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\obj\Debug\net7.0\pattern-matching.pdb
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\obj\Debug\net7.0\pattern-matching.genruntimeconfig.cache
+D:\Users\Administrator\Documents\GitHub\Practice\C#\pattern-matching\obj\Debug\net7.0\ref\pattern-matching.dll
